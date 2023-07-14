@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "This site holds a few resources for CSC 324 as taught at Georgetown College, KY.\nFor now it’s just a few prelminary Javascript exercises."
-  },
-  {
     "objectID": "table-sort.html",
     "href": "table-sort.html",
     "title": "CSC 324",
@@ -28,11 +21,18 @@
     "text": "Read Chapter 2 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWrite a JavaScript file in which you solve all of the exercises at the end of the chapter. Push it to your Github repository. The filename should be of the form ch02_firstname_lastname.js."
   },
   {
-    "objectID": "table.html",
-    "href": "table.html",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "This site holds a few resources for CSC 324 as taught at Georgetown College, KY.\nFor now it’s just a few prelminary Javascript exercises."
+  },
+  {
+    "objectID": "eloquent-ch01.html",
+    "href": "eloquent-ch01.html",
     "title": "CSC 324",
     "section": "",
-    "text": "In this assignment you will use JavaScript in the browser to select a table and fill it with information obtained from an array of objects. You’ll get some practice with the DOM and with iteration.\nIn order to prepare for this exercise, read Chapters 13 and 14 of Eloquent JavaScript.\nDownload this zip-file and extract it into your CSC 324 repo. Note that the custom.js file defines an array called artists. Complete the file with code that locates the table on the index page and populates it with the information in artists.\n\n\n\nWhen the page is loaded and the browser has run the code in custom.js, the page should look like this.\n\n\nThe completed page with all of its assets should be wrapped in a folder with a name of the form table_firstname_lastname.zip. Zip this folder and email it to me."
+    "text": "Read Chapter 1 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWe’ll discuss it in class; come prepared with any questions you might have."
   },
   {
     "objectID": "eloquent-ch04.html",
@@ -42,11 +42,11 @@
     "text": "Read Chapter 4 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWrite a JavaScript file in which you the following exercises at the end of the chapter:\n\nSum and Range\nReversing an Array\n\nInclude it in your CSC324 git repository and push it to GitHub. The filename should be of the form ch04_firstname_lastname.js."
   },
   {
-    "objectID": "eloquent-ch01.html",
-    "href": "eloquent-ch01.html",
+    "objectID": "table.html",
+    "href": "table.html",
     "title": "CSC 324",
     "section": "",
-    "text": "Read Chapter 1 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWe’ll discuss it in class; come prepared with any questions you might have."
+    "text": "In this assignment you will use JavaScript in the browser to select a table and fill it with information obtained from an array of objects. You’ll get some practice with the DOM and with iteration.\nIn order to prepare for this exercise, read Chapters 13 and 14 of Eloquent JavaScript.\nDownload this zip-file and extract it into your CSC 324 repo. Note that the custom.js file defines an array called artists. Complete the file with code that locates the table on the index page and populates it with the information in artists.\n\n\n\nWhen the page is loaded and the browser has run the code in custom.js, the page should look like this.\n\n\nThe completed page with all of its assets should be wrapped in a folder with a name of the form table_firstname_lastname.zip. Zip this folder and email it to me."
   },
   {
     "objectID": "eloquent-ch05.html",
