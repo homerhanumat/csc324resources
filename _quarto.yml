@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "CSC 324"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - sidebar:exercises
+
+  sidebar:
+    - id: exercises
+      title: "Exercises"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
+        - text: "Eloquent Javascript:  Chapter 1"
+          file:  eloquent-ch01.md
+        - text: "Eloquent Javascript:  Chapter 2"
+          file:  eloquent-ch02.md
+        - text: "Eloquent Javascript:  Chapter 3"
+          file:  eloquent-ch03.md
+        - text: "Eloquent Javascript:  Chapter 4"
+          file:  eloquent-ch04.md
+        - text: "Eloquent Javascript:  Chapter 5"
+          file:  eloquent-ch05.md
+        - text: "Eloquent Javascript:  Chapter 6"
+          file:  eloquent-ch06.md
+        - text: "Making a Table"
+          file:  table.md
+        - text: "Sorting a Table"
+          file:  table-sort.md
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

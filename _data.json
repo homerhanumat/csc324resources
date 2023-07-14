@@ -1,0 +1,58 @@
+{
+  "eloquent-ch01": {
+    "pageTitle": "Eloquent JS Chapter 1",
+    "title": "Eloquent JS Chapter 1",
+    "date" : "August 22, 2018",
+    "status": "published",
+    "description": "chapter 1 in eloquent javascript"
+  },
+  "eloquent-ch02": {
+    "pageTitle": "Eloquent JS Chapter 2",
+    "title": "Eloquent JS Chapter 2",
+    "date" : "September 3, 2018",
+    "status": "published",
+    "description": "problems from chapter 2 in Eloquent JavaScript"
+  },
+  "eloquent-ch03": {
+    "pageTitle": "Eloquent JS Chapter 3",
+    "title": "Eloquent JS Chapter 3",
+    "date" : "September 12, 2018",
+    "status": "published",
+    "description": "problems from chapter 3 in Eloquent JavaScript"
+  },
+  "eloquent-ch04": {
+    "pageTitle": "Eloquent JS Chapter 4",
+    "title": "Eloquent JS Chapter 4",
+    "date" : "September 26, 2018",
+    "status": "published",
+    "description": "problems from chapter 4 in Eloquent JavaScript"
+  },
+  "eloquent-ch05": {
+    "pageTitle": "Eloquent JS Chapter 5",
+    "title": "Eloquent JS Chapter 5",
+    "date" : "October 3, 2018",
+    "status": "published",
+    "description": "problems from chapter 2 in Eloquent JavaScript"
+  },
+  "eloquent-ch06": {
+    "pageTitle": "Eloquent JS Chapter 6",
+    "title": "Eloquent JS Chapter 6",
+    "date" : "October 10, 2018",
+    "status": "published",
+    "description": "problems from chapter 6 in Eloquent JavaScript"
+  },
+  "table": {
+    "pageTitle": "Table",
+    "title": "Populating a Table",
+    "date" : "October 17, 2018",
+    "status": "published",
+    "description": "javascript browser assignment"
+  },
+  "table-sort": {
+    "pageTitle": "Table Sorting",
+    "title": "Sorting a Table",
+    "date" : "October 24, 2018",
+    "status": "published",
+    "description": "javascript browser assignment"
+  }
+}

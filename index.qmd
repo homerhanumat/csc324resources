@@ -1,0 +1,7 @@
+---
+title: "Welcome"
+---
+
+This site holds a few resources for CSC 324 as taught at Georgetown College, KY.
+
+For now it's just a few prelminary Javascript exercises.
