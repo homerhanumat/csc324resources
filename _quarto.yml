@@ -5,10 +5,14 @@ project:
 website:
   title: "CSC 324"
   navbar:
+    collapse-below: lg
     left:
-      - href: index.qmd
-        text: Home
-      - sidebar:exercises
+      - text: "Home"
+        href: index.qmd
+      - text: "Exercises"
+        href: exercises/index.qmd
+      - text: "Examples"
+        href: examples/index.qmd
 
   sidebar:
     - id: exercises
@@ -17,22 +21,33 @@ website:
       background: light
       collapse-level: 2
       contents: 
+        - exercises/index.qmd
         - text: "Eloquent Javascript:  Chapter 1"
-          file:  eloquent-ch01.md
+          href:  exercises/eloquent-ch01.md
         - text: "Eloquent Javascript:  Chapter 2"
-          file:  eloquent-ch02.md
+          href:  exercises/eloquent-ch02.md
         - text: "Eloquent Javascript:  Chapter 3"
-          file:  eloquent-ch03.md
+          href:  exercises/eloquent-ch03.md
         - text: "Eloquent Javascript:  Chapter 4"
-          file:  eloquent-ch04.md
+          href:  exercises/eloquent-ch04.md
         - text: "Eloquent Javascript:  Chapter 5"
-          file:  eloquent-ch05.md
+          href:  exercises/eloquent-ch05.md
         - text: "Eloquent Javascript:  Chapter 6"
-          file:  eloquent-ch06.md
+          href:  exercises/eloquent-ch06.md
         - text: "Making a Table"
-          file:  table.md
+          href:  exercises/table.md
         - text: "Sorting a Table"
-          file:  table-sort.md
+          href:  exercises/table-sort.md
+
+    - id: examples
+      title: "Exercises"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
+        - examples/index.qmd
+        - text: "Penguins"
+          href:  examples/example_01.qmd
 
 format:
   html:
