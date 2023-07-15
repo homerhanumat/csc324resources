@@ -1,73 +1,10 @@
 [
   {
-    "objectID": "table-sort.html",
-    "href": "table-sort.html",
-    "title": "CSC 324",
+    "objectID": "examples/example_01.html",
+    "href": "examples/example_01.html",
+    "title": "Penguins",
     "section": "",
-    "text": "In this assignment you add some buttons to the table you created and populated in a previous assignment. You will practice handling events in JavaScript.\nIn order to prepare for this exercise, read Chapter 15 of Eloquent JavaScript.\nStarting from the site that populates a table of Bhangra artists, add three buttons:\n\na button that when clicked will sort the artists by name;\na button that when clicked will sort the artists by year of birth;\na button that when clicked will randomly shuffle the rows of the original table.\n\nThe completed page with all of its assets should be wrapped in a folder with a name of the form table-sort_firstname_lastname.zip. Zip this folder and email it to me."
-  },
-  {
-    "objectID": "eloquent-ch06.html",
-    "href": "eloquent-ch06.html",
-    "title": "CSC 324",
-    "section": "",
-    "text": "Read Chapter 6 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWrite a JavaScript file in which you work the following exercise at the end of the chapter:\n\nGroup\n\nInclude it in your CSC324 git repository and push it to GitHub. The filename should be of the form ch06_firstname_lastname.js."
-  },
-  {
-    "objectID": "eloquent-ch02.html",
-    "href": "eloquent-ch02.html",
-    "title": "CSC 324",
-    "section": "",
-    "text": "Read Chapter 2 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWrite a JavaScript file in which you solve all of the exercises at the end of the chapter. Push it to your Github repository. The filename should be of the form ch02_firstname_lastname.js."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "This site holds a few resources for CSC 324 as taught at Georgetown College, KY.\nFor now it’s just a few prelminary Javascript exercises."
-  },
-  {
-    "objectID": "eloquent-ch01.html",
-    "href": "eloquent-ch01.html",
-    "title": "CSC 324",
-    "section": "",
-    "text": "Read Chapter 1 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWe’ll discuss it in class; come prepared with any questions you might have."
-  },
-  {
-    "objectID": "eloquent-ch04.html",
-    "href": "eloquent-ch04.html",
-    "title": "CSC 324",
-    "section": "",
-    "text": "Read Chapter 4 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWrite a JavaScript file in which you the following exercises at the end of the chapter:\n\nSum and Range\nReversing an Array\n\nInclude it in your CSC324 git repository and push it to GitHub. The filename should be of the form ch04_firstname_lastname.js."
-  },
-  {
-    "objectID": "table.html",
-    "href": "table.html",
-    "title": "CSC 324",
-    "section": "",
-    "text": "In this assignment you will use JavaScript in the browser to select a table and fill it with information obtained from an array of objects. You’ll get some practice with the DOM and with iteration.\nIn order to prepare for this exercise, read Chapters 13 and 14 of Eloquent JavaScript.\nDownload this zip-file and extract it into your CSC 324 repo. Note that the custom.js file defines an array called artists. Complete the file with code that locates the table on the index page and populates it with the information in artists.\n\n\n\nWhen the page is loaded and the browser has run the code in custom.js, the page should look like this.\n\n\nThe completed page with all of its assets should be wrapped in a folder with a name of the form table_firstname_lastname.zip. Zip this folder and email it to me."
-  },
-  {
-    "objectID": "eloquent-ch05.html",
-    "href": "eloquent-ch05.html",
-    "title": "CSC 324",
-    "section": "",
-    "text": "Read Chapter 5 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWrite a JavaScript file in which you the following exercises at the end of the chapter:\n\nFlattening\nWRITE YOUR OWN LOOP FUNCTION\nEverything\n\nInclude it in your CSC324 git repository and push it to GitHub. The filename should be of the form ch05_firstname_lastname.js."
-  },
-  {
-    "objectID": "exercises.html",
-    "href": "exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "Here are the exercises."
-  },
-  {
-    "objectID": "eloquent-ch03.html",
-    "href": "eloquent-ch03.html",
-    "title": "CSC 324",
-    "section": "",
-    "text": "Read Chapter 3 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWrite a JavaScript file in which you solve all of the exercises at the end of the chapter. Include it in your CSC324 git repository and push it to GitHub. The filename should be of the form ch03_firstname_lastname.js."
+    "text": "A simple example based on Allison Horst’s Palmer Penguins dataset. Here we look at how penguin body mass varies across both sex and species (use the provided inputs to filter the dataset by bill length and island):\n\nviewof bill_length_min = Inputs.range(\n  [32, 50], \n  {value: 35, step: 1, label: \"Bill length (min):\"}\n)\nviewof islands = Inputs.checkbox(\n  [\"Torgersen\", \"Biscoe\", \"Dream\"], \n  { value: [\"Torgersen\", \"Biscoe\"], \n    label: \"Islands:\"\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlotData\n\n\n\nPlot.rectY(filtered, \n  Plot.binX(\n    {y: \"count\"}, \n    {x: \"body_mass_g\", fill: \"species\", thresholds: 20}\n  ))\n  .plot({\n    facet: {\n      data: filtered,\n      x: \"sex\",\n      y: \"species\",\n      marginRight: 80\n    },\n    marks: [\n      Plot.frame(),\n    ]\n  }\n)\n\n\n\n\n\n\n\n\n\nInputs.table(filtered)\n\n\n\n\n\n\n\n\n\n\ndata = FileAttachment(\"penguins.csv\").csv({ typed: true })\n\n\n\n\n\n\n\nfiltered = data.filter(function(penguin) {\n  return bill_length_min &lt; penguin.bill_length_mm &&\n         islands.includes(penguin.island);\n})"
   },
   {
     "objectID": "exercises/table-sort.html",
@@ -91,18 +28,11 @@
     "text": "Read Chapter 5 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWrite a JavaScript file in which you the following exercises at the end of the chapter:\n\nFlattening\nWRITE YOUR OWN LOOP FUNCTION\nEverything\n\nInclude it in your CSC324 git repository and push it to GitHub. The filename should be of the form ch05_firstname_lastname.js."
   },
   {
-    "objectID": "exercises/eloquent-ch01.html",
-    "href": "exercises/eloquent-ch01.html",
+    "objectID": "exercises/table.html",
+    "href": "exercises/table.html",
     "title": "CSC 324",
     "section": "",
-    "text": "Read Chapter 1 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWe’ll discuss it in class; come prepared with any questions you might have."
-  },
-  {
-    "objectID": "examples.html",
-    "href": "examples.html",
-    "title": "Examples",
-    "section": "",
-    "text": "Here are a few exampples."
+    "text": "In this assignment you will use JavaScript in the browser to select a table and fill it with information obtained from an array of objects. You’ll get some practice with the DOM and with iteration.\nIn order to prepare for this exercise, read Chapters 13 and 14 of Eloquent JavaScript.\nDownload this zip-file and extract it into your CSC 324 repo. Note that the custom.js file defines an array called artists. Complete the file with code that locates the table on the index page and populates it with the information in artists.\n\n\n\nWhen the page is loaded and the browser has run the code in custom.js, the page should look like this.\n\n\nThe completed page with all of its assets should be wrapped in a folder with a name of the form table_firstname_lastname.zip. Zip this folder and email it to me."
   },
   {
     "objectID": "exercises/eloquent-ch04.html",
@@ -112,11 +42,25 @@
     "text": "Read Chapter 4 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWrite a JavaScript file in which you the following exercises at the end of the chapter:\n\nSum and Range\nReversing an Array\n\nInclude it in your CSC324 git repository and push it to GitHub. The filename should be of the form ch04_firstname_lastname.js."
   },
   {
-    "objectID": "exercises/table.html",
-    "href": "exercises/table.html",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "This site holds a few resources for CSC 324 as taught at Georgetown College, KY.\nFor now it’s just a few prelminary Javascript exercises."
+  },
+  {
+    "objectID": "exercises/eloquent-ch01.html",
+    "href": "exercises/eloquent-ch01.html",
     "title": "CSC 324",
     "section": "",
-    "text": "In this assignment you will use JavaScript in the browser to select a table and fill it with information obtained from an array of objects. You’ll get some practice with the DOM and with iteration.\nIn order to prepare for this exercise, read Chapters 13 and 14 of Eloquent JavaScript.\nDownload this zip-file and extract it into your CSC 324 repo. Note that the custom.js file defines an array called artists. Complete the file with code that locates the table on the index page and populates it with the information in artists.\n\n\n\nWhen the page is loaded and the browser has run the code in custom.js, the page should look like this.\n\n\nThe completed page with all of its assets should be wrapped in a folder with a name of the form table_firstname_lastname.zip. Zip this folder and email it to me."
+    "text": "Read Chapter 1 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWe’ll discuss it in class; come prepared with any questions you might have."
+  },
+  {
+    "objectID": "exercises/index.html",
+    "href": "exercises/index.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Here are the exercises."
   },
   {
     "objectID": "exercises/eloquent-ch02.html",
@@ -133,24 +77,10 @@
     "text": "Read Chapter 3 of Eloquent JavaScript by Marijn Haverbeke.\n\n\n\nMarijn Haverbeke uses an image of Bodhidharma, an important figure in Chinese Zen legend, as his avatar on social media.\n\n\nWrite a JavaScript file in which you solve all of the exercises at the end of the chapter. Include it in your CSC324 git repository and push it to GitHub. The filename should be of the form ch03_firstname_lastname.js."
   },
   {
-    "objectID": "exercises/index.html",
-    "href": "exercises/index.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "Here are the exercises."
-  },
-  {
     "objectID": "examples/index.html",
     "href": "examples/index.html",
     "title": "Examples",
     "section": "",
     "text": "Here are a few exampples."
-  },
-  {
-    "objectID": "examples/example_01.html",
-    "href": "examples/example_01.html",
-    "title": "Penguins",
-    "section": "",
-    "text": "A simple example based on Allison Horst’s Palmer Penguins dataset. Here we look at how penguin body mass varies across both sex and species (use the provided inputs to filter the dataset by bill length and island):\n\nviewof bill_length_min = Inputs.range(\n  [32, 50], \n  {value: 35, step: 1, label: \"Bill length (min):\"}\n)\nviewof islands = Inputs.checkbox(\n  [\"Torgersen\", \"Biscoe\", \"Dream\"], \n  { value: [\"Torgersen\", \"Biscoe\"], \n    label: \"Islands:\"\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlotData\n\n\n\nPlot.rectY(filtered, \n  Plot.binX(\n    {y: \"count\"}, \n    {x: \"body_mass_g\", fill: \"species\", thresholds: 20}\n  ))\n  .plot({\n    facet: {\n      data: filtered,\n      x: \"sex\",\n      y: \"species\",\n      marginRight: 80\n    },\n    marks: [\n      Plot.frame(),\n    ]\n  }\n)\n\n\n\n\n\n\n\n\n\nInputs.table(filtered)\n\n\n\n\n\n\n\n\n\n\ndata = FileAttachment(\"penguins.csv\").csv({ typed: true })\n\n\n\n\n\n\n\nfiltered = data.filter(function(penguin) {\n  return bill_length_min &lt; penguin.bill_length_mm &&\n         islands.includes(penguin.island);\n})"
   }
 ]

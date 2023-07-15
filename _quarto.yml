@@ -40,7 +40,7 @@ website:
           href:  exercises/table-sort.md
 
     - id: examples
-      title: "Exercises"
+      title: "Examples"
       style: "docked"
       background: light
       collapse-level: 2

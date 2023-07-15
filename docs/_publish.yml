@@ -1,0 +1,8 @@
+- source: project
+  quarto-pub:
+    - id: c69be845-b1b1-459c-97dd-c7f81e3995d0
+      url: 'https://homer.quarto.pub/csc324'
+- source: project
+  quarto-pub:
+    - id: 96eafaa0-c49d-4c5c-a633-962a0cbab8ce
+      url: 'https://homer.quarto.pub/csc-324'
