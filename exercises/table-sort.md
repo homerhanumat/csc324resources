@@ -8,4 +8,4 @@ Starting from the site that populates a table of Bhangra artists, add three butt
 * a button that when clicked will sort the artists by year of birth;
 * a button that when clicked will randomly shuffle the rows of the original table.
 
-The completed page with all of its assets should be wrapped in a folder with a name of the form <code>table-sort_firstname_lastname.zip</code>.  Zip this folder and email it to me.
+Make a repository on Github, called `sorting-table`.  The completed page with all of its assets should be pushed to the repository by the due-date.

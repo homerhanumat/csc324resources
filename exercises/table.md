@@ -10,7 +10,7 @@ table on the index page and populates it with the information in <code>artists</
 
  <figure>
   <img src="/images/bhangra-table.png" alt="bhangra artists table" style="width:70%; margin:  auto;">
-  <figcaption>When the page is loaded and the browser has run the code in <code>custom.js</code>, the page should look like this.</figcaption>
+  <figcaption>When the page is loaded and the browser has run the code in <code>custom.js</code>, the page should look like the image above.</figcaption>
 </figure> 
 
-The completed page with all of its assets should be wrapped in a folder with a name of the form <code>table_firstname_lastname.zip</code>.  Zip this folder and email it to me.
+Make a repository on Github, called `making-table`.  The completed page with all of its assets should be pushed to the repository by the due-date.
