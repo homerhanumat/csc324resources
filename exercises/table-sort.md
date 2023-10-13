@@ -8,4 +8,4 @@ Starting from the site that populates a table of Bhangra artists, add three butt
 * a button that when clicked will sort the artists by year of birth;
 * a button that when clicked will randomly shuffle the rows of the original table.
 
-Make a repository on Github, called `sorting-table`.  The completed page with all of its assets should be pushed to the repository by the due-date.
+Make a folder in your CSC324 repository, called `table-sort`.  The completed page with all of its assets should be in this folder and should be pushed to the repository by the due-date.

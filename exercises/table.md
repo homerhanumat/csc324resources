@@ -13,4 +13,4 @@ table on the index page and populates it with the information in <code>artists</
   <figcaption>When the page is loaded and the browser has run the code in <code>custom.js</code>, the page should look like the image above.</figcaption>
 </figure> 
 
-Make a repository on Github, called `making-table`.  The completed page with all of its assets should be pushed to the repository by the due-date.
+Make a folder in your CSC324 repository, called `table-assign`.  The completed page with all of its assets should be in this folder and should be pushed to the repository by the due-date.
