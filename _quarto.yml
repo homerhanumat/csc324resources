@@ -34,6 +34,8 @@ website:
           href:  exercises/eloquent-ch05.md
         - text: "Eloquent Javascript:  Chapter 6"
           href:  exercises/eloquent-ch06.md
+        - text: "Dr. White's Eloquent JS Solutions"
+          href:  exercises/haverbeke-solutions.md
         - text: "Making a Table"
           href:  exercises/table.md
         - text: "Sorting a Table"
