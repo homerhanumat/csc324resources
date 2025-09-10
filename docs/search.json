@@ -33,6 +33,17 @@
     ]
   },
   {
+    "objectID": "exercises/haverbeke-solutions.html#chapter-3-solutions",
+    "href": "exercises/haverbeke-solutions.html#chapter-3-solutions",
+    "title": "CSC 324",
+    "section": "Chapter 3 Solutions",
+    "text": "Chapter 3 Solutions\nfunction notify(text) {\n  console.log(`\\nTesting ${text} ...\\n`);\n}\n\n/****************************************************\n MINIMUM\n\n The previous chapter introduced the standard function\n Math.min that returns its smallest argument. We can\n do that ourselves now. Write a function min that takes\n two arguments and returns their minimum.\n *****************************************************/\n\nfunction min(x, y) {\n  return x &lt;= y ? x : y;\n}\n\nnotify(\"min\");\nconsole.log(min(5, 3));\nconsole.log(min(-2, 3));\n\n// another version:\nlet min2 = (x, y) =&gt; x &lt;= y ? x : y;\n\nnotify(\"min2\");\nconsole.log(\"min2\", -4, 6, min2(-4, 6));\n\n/*******************************************************\n * RECURSION\n *\n * Recursive function to determine if a number is even\n *******************************************************/\n\nfunction isEven(n) {\n  n = n &gt;= 0 ? n : -n;\n  if ( n === 0 ) return true;\n  if ( n === 1 ) return false;\n  return isEven(n - 2);\n}\n\nnotify(\"isEven\");\nconsole.log(isEven(50));\nconsole.log(isEven(-27));\n\n/*******************************************************\n * Bean Counting\n *\n * Function to count number of occurences of a character\n * in a string\n *******************************************************/\n\nfunction countChar(str, char) {\n  let count = 0;\n  for ( let n = 1; n &lt;= str.length; n++ ) {\n    count += str[n] === char ? 1 : 0;\n  }\n  return count;\n}\n\nnotify(\"countChar\");\nconsole.log(countChar(\"hello\", \"l\"));",
+    "crumbs": [
+      "Exercises",
+      "Dr. White's Eloquent JS Solutions"
+    ]
+  },
+  {
     "objectID": "exercises/eloquent-ch03.html",
     "href": "exercises/eloquent-ch03.html",
     "title": "CSC 324",

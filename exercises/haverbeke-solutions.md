@@ -120,3 +120,69 @@ const pairs = Math.floor(size / 2),
 notify(`Chessboard, with size = ${size}`);
 console.log(board + extraRow);
 ```
+
+## Chapter 3 Solutions
+
+```js
+function notify(text) {
+  console.log(`\nTesting ${text} ...\n`);
+}
+
+/****************************************************
+ MINIMUM
+
+ The previous chapter introduced the standard function
+ Math.min that returns its smallest argument. We can
+ do that ourselves now. Write a function min that takes
+ two arguments and returns their minimum.
+ *****************************************************/
+
+function min(x, y) {
+  return x <= y ? x : y;
+}
+
+notify("min");
+console.log(min(5, 3));
+console.log(min(-2, 3));
+
+// another version:
+let min2 = (x, y) => x <= y ? x : y;
+
+notify("min2");
+console.log("min2", -4, 6, min2(-4, 6));
+
+/*******************************************************
+ * RECURSION
+ *
+ * Recursive function to determine if a number is even
+ *******************************************************/
+
+function isEven(n) {
+  n = n >= 0 ? n : -n;
+  if ( n === 0 ) return true;
+  if ( n === 1 ) return false;
+  return isEven(n - 2);
+}
+
+notify("isEven");
+console.log(isEven(50));
+console.log(isEven(-27));
+
+/*******************************************************
+ * Bean Counting
+ *
+ * Function to count number of occurences of a character
+ * in a string
+ *******************************************************/
+
+function countChar(str, char) {
+  let count = 0;
+  for ( let n = 1; n <= str.length; n++ ) {
+    count += str[n] === char ? 1 : 0;
+  }
+  return count;
+}
+
+notify("countChar");
+console.log(countChar("hello", "l"));
+```
