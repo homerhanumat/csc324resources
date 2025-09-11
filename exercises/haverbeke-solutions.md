@@ -177,7 +177,7 @@ console.log(isEven(-27));
 
 function countChar(str, char) {
   let count = 0;
-  for ( let n = 1; n <= str.length; n++ ) {
+  for ( let n = 0; n < str.length; n++ ) {
     count += str[n] === char ? 1 : 0;
   }
   return count;
