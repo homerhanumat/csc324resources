@@ -44,6 +44,17 @@
     ]
   },
   {
+    "objectID": "exercises/haverbeke-solutions.html#chapter-4-solutions",
+    "href": "exercises/haverbeke-solutions.html#chapter-4-solutions",
+    "title": "CSC 324",
+    "section": "Chapter 4 Solutions",
+    "text": "Chapter 4 Solutions\nfunction notify(text) {\n    console.log(`\\nTesting ${text} ...\\n`);\n}\n\n/**************************************************************\n * SUM AND RANGE\n * \n * Write a range function that takes two arguments, start and \n * end, and returns an array containing all the numbers from \n * start up to (and including) end.\n * \n * Next, write a sum function that takes an array of numbers \n * and returns the sum of these numbers. Run the example \n * program and see whether it does indeed return 55.\n * \n * As a bonus assignment, modify your range function to take\n *  an optional third argument that indicates the “step” value\n *  used when building the array. If no step is given, the \n * elements go up by increments of one, corresponding to the \n * old behavior. The function call range(1, 10, 2) should return\n *  [1, 3, 5, 7, 9]. Make sure it also works with negative step\n *  values so that range(5, 2, -1) produces [5, 4, 3, 2].\n ****************************************************************/\n\nfunction range(start, stop, step = 1) {\n    let arr = [];\n    function finished(c, t) {\n        return step &gt; 0 ? c &gt; t : c &lt; t;\n    }\n    let current = start;\n    while (!finished(current, stop)) {\n        arr.push(current);\n        current += step;\n    }\n    return arr;\n}\n\nfunction sum(arr) {\n    let sum = 0;\n    for (let elem of arr) {\n        sum += elem;\n    }\n    return sum;\n}\n\nnotify(\"range and sum\");\nconsole.log(range(1, 10));\n// → [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\nconsole.log(range(5, 2, -1));\n// → [5, 4, 3, 2]\nconsole.log(sum(range(1, 10)));\n// → 55\n\n/**************************************************************\n * REVERSING AN ARRAY\n * \n * Arrays have a reverse method which changes the array by \n * inverting the order in which its elements appear. For this \n * exercise, write two functions, reverseArray and \n * reverseArrayInPlace. The first, reverseArray, takes an array \n * as argument and produces a new array that has the same \n * elements in the inverse order. The second, reverseArrayInPlace,\n * does what the reverse method does: it modifies the array \n * given as argument by reversing its elements. Neither may use \n * the standard reverse method.\n ****************************************************************/\n\nfunction reverseArray(arr) {\n    let reversed = [];\n    for (elem of arr) {\n        reversed.unshift(elem);\n    }\n    return reversed;\n}\n\nfunction reverseArrayInPlace(arr) {\n    for (let i = 0; i &lt; Math.floor(arr.length / 2); i++) {\n        let elem = arr[i];\n        let oppositeLocation = arr.length - i - 1;\n        arr[i] = arr[oppositeLocation];\n        arr[oppositeLocation] = elem;\n    }\n}\n\nnotify(\"reversing\");\nconsole.log(reverseArray([\"A\", \"B\", \"C\"]));\n// → [\"C\", \"B\", \"A\"];\nlet arrayValue = [1, 2, 3, 4, 5];\nreverseArrayInPlace(arrayValue);\nconsole.log(arrayValue);\n// → [5, 4, 3, 2, 1]\nlet arrayValue2 = range(1, 6);\nreverseArrayInPlace(arrayValue2);\nconsole.log(arrayValue2);",
+    "crumbs": [
+      "Exercises",
+      "Dr. White's Eloquent JS Solutions"
+    ]
+  },
+  {
     "objectID": "exercises/eloquent-ch03.html",
     "href": "exercises/eloquent-ch03.html",
     "title": "CSC 324",
