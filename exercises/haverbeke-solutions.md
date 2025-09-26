@@ -285,3 +285,140 @@ let arrayValue2 = range(1, 6);
 reverseArrayInPlace(arrayValue2);
 console.log(arrayValue2);
 ```
+
+## Chapter 5 Solutions
+
+```js
+function notify(text) {
+  console.log(`\nTesting ${text} ...\n`);
+}
+
+/*************************************************************
+ * FLATTENING
+ *
+ * Use the reduce method in combination with the concat method
+ * to “flatten” an array of arrays into a single array that has
+ * all the elements of the input arrays.
+ *************************************************************/
+
+function flatten(arr) {
+  return arr.reduce((acc, elem) => acc.concat(elem), []);
+}
+
+notify("flatten");
+let array1 = [[1, 2], [3, 4], [5, 6, 7], [8]];
+console.log(flatten(array1));
+// Note that this solution works even when not all elements of the
+// array are themselves arrays:
+let array2 = [0, [1,2], [3,4,5]];
+console.log(flatten(array2));
+// But flattening only goes one level deep:
+let array3 = [[1], [2, 3, 4], [5, [6, 7]], [8]];
+console.log(flatten(array3));
+
+// a verbose version (to help show how reduce works):
+function verboseConcatenation(acc, elem) {
+  console.log("\nWhat we have so far is:");
+  console.log(acc);
+  console.log("To this we will append:");
+  console.log(elem);
+  let more = acc.concat(elem);
+  return more;
+}
+
+function verboseFlatten(arr) {
+  return arr.reduce(verboseConcatenation, []);
+}
+
+notify("the verbose form of the flatten function:");
+let flat1 = verboseFlatten(array1);
+console.log("\nThe result is:");
+console.log(flat1);
+
+let flat2 = verboseFlatten(array3);
+console.log("\nThe result is:");
+console.log(array3);
+
+/*********************************************************************
+ * Let's improve our function: have it flatten "deeply", 
+ * in the sense that the array that
+ * it returns has no elements that are themselves arrays.
+ ********************************************************************/
+
+
+// First, a helper-function:
+function isFlat(thing) {
+  if (!Array.isArray(thing)) {
+    // a non-array counts as "flat":
+    return true;
+  }
+  // if we got this far, thing is an array, so iterate through it:
+  for (elem of thing) {
+    if (Array.isArray(elem)) {
+      // found an array inside thing, so:
+      return false;
+    }
+  }
+  // if we got this far then no element of thing was an array, so:
+  return true;
+}
+
+// Next, a recursive function to flatten deeply:
+function deepFlatten(arr) {
+  if (isFlat(arr)) {
+    return arr;
+  }
+  return arr.reduce((acc, elem) => acc.concat(deepFlatten(elem)), []);
+}
+
+notify("deepFlatten");
+let array4 = [[0,[[1]], [[2, 3]]], [[[[4], [[5], [6]]]]], [[7, 8]], 9, [[10]], 11];
+console.log(deepFlatten(array4));
+
+
+
+/***************************************************************
+ * WRITE YOUR OWN LOOP FUNCTION
+ ***************************************************************/
+
+function loop(value, test, update, bodyFn) {
+  while (test(value)) {
+    bodyFn(value);
+    value = update(value);
+  }
+}
+
+notify("loop");
+loop(3, n => n > 0, n => n - 1, console.log);
+
+/**************************************************************
+ * EVERYTHING
+ *
+ * Implement every as a function that takes an array and a
+ * predicate function as parameters. Write two versions, one
+ * using a loop and one using the some method.
+ **************************************************************/
+
+// using loop
+function every(arr, predFn) {
+  for (elem of arr) {
+    if (!predFn(elem)) return false;
+  }
+  return true;
+}
+
+let myArray = [1,2,3,4,5,6];
+
+notify("every");
+console.log(every(myArray, x => x >= 2));
+console.log(every(myArray, x => x >= 1));
+
+// using some method
+function every2(arr, predFn) {
+  return !arr.some((elem) => !predFn(elem));
+}
+
+notify("every2");
+console.log(every2(myArray, x => x >= 2));
+console.log(every2(myArray, x => x >= 1));
+```
