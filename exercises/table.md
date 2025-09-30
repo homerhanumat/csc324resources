@@ -5,6 +5,12 @@ iteration.
 
 In order to prepare for this exercise, read Chapters 13 and 14 of *Eloquent JavaScript*.
 
+As preparation in class, we will study the following:
+
+* <a href="/documents/ch14_mountains.html" download>Populatiing a Table of Mountains</a>
+* <a href="/documents/ch14_mountains-2.html" download>Populatiing a Table of Mountains (InnerHTML Approach)</a>
+* <a href="/documents/ch14_mountains-3.html" download>Populatiing a Table of Mountains (with Hyperlinks)</a>
+
 Download <a href="/documents/table-assign.zip">this zip-file</a> and extract it into your CSC 324 repo.  Note that the <code>custom.js</code> file defines an array called <code>artists</code>.  Complete the file with code that locates the
 table on the index page and populates it with the information in <code>artists</code>.
 
