@@ -1,6 +1,6 @@
 In this assignment you add some buttons to the table you created and populated in a previous assignment.  You will practice handling events in JavaScript.
 
-In order to prepare for this exercise, read Chapter 15 of *Eloquent JavaScript*.  To learn about sorting, in class we will study:
+In order to prepare for this exercise, read Chapter 15 of *Eloquent JavaScript*.  To illustrate the topics of this chapter, in class we will study:
 
 * <a href="/documents/table-sort-notes.js" download>this JavaScript file</a>, and 
 * <a href="/documents/random_practice.zip" download>this set of files</a>, and
