@@ -422,3 +422,119 @@ notify("every2");
 console.log(every2(myArray, x => x >= 2));
 console.log(every2(myArray, x => x >= 1));
 ```
+
+## Chapter 6 Solutions
+
+```js
+function notify(text) {
+  console.log(`\nTesting ${text} ...\n`);
+}
+
+/***************************************************************
+ * GROUP
+ *
+ * Write a class called Group (since Set is already taken). Like
+ * Set, it has add, delete, and has methods. Its constructor
+ * creates an empty group, add adds a value to the group (but
+ * only if it isn’t already a member), delete removes its
+ * argument from the group (it if was a member), and has
+ * returns a Boolean value indicating whether its argument is
+ * a member of the group.
+ *
+ * Use the === operator, or something equivalent such as
+ * indexOf, to determine whether two values are the same.
+ *
+ * Give the class a static from method that takes an iteratable
+ * object as argument and creates a group that contains all
+ * the values produced by iterating over it.
+ **************************************************************/
+
+// HSW:  This solution uses the relatively new includes method for arrays
+// (intrduced to JavaScript in the 2016 language standards)
+// instead of the suggested === operator or indexOf.
+// includes is just easier to work with, here!
+class Group {
+  constructor() {
+    this.contents = [];
+    console.log("Creating an empty group.");
+  }
+
+  has(x) {
+    return this.contents.includes(x);
+  }
+
+  add(x) {
+    if (this.has(x)) {
+      console.log(`This group already has ${x}.  Nothing will be done.`);
+    } else {
+      console.log(`Adding ${x} to the group.`);
+      this.contents.push(x);
+    }
+    return(this);
+  }
+
+  delete(x) {
+    if (this.has(x)) {
+      console.log(`Deleting ${x} from the group.`);
+      let leftOver = this.contents.filter(elem => elem !== x);
+      this.contents = leftOver;
+    } else {
+      console.log(`This group does not have ${x}.  Nothing will be done.`);
+    }
+    return(this);
+  }
+
+  static from(iterable) {
+    let group = new Group();
+    for (let value of iterable) {
+      if (!group.has(value)) {
+        group.add(value);
+      }
+    }
+    return group;
+  }
+}
+
+/*******************************************************************
+ * Note on Static Methods:
+ * 
+ * "In JavaScript, the static keyword is used to define methods 
+ * or fields that belong to the class itself, rather than to any
+ * specific instance of the class. This means that static properties
+ * and methods are accessed directly on the class name, without 
+ * needing to create an object of that class."
+ * -- AI Overview from a Google Search
+ * 
+ * The AI Overview put it very well, I think!
+ *********************************************************************/
+
+notify("constructor for Group class");
+let group1 = new Group();
+console.log(group1);
+
+notify("static from method of Group class");
+// Below, note how the from method is "accessed directly on the class name":
+let group2 = Group.from([10, 20]);
+console.log(group2);
+
+notify("has method of Group class");
+console.log(group2.has(10)); // → true
+console.log(group2.has(30)); // → false
+
+notify("add method of Group class");
+group2.add(30);
+console.log(group2);
+group2.add(10);
+
+notify("delete method of Group class");
+group2.delete(10);
+console.log(group2.has(10)); // -> false
+group2.delete(10);
+
+notify("method chaining");
+let group3 = new Group();
+// Methods that return the group acted upon can be chained:
+group3.add(1).add(2).add(3).add(3).delete(4).delete(3);
+console.log(group3);
+
+```
