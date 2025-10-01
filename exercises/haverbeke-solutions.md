@@ -536,5 +536,4 @@ let group3 = new Group();
 // Methods that return the group acted upon can be chained:
 group3.add(1).add(2).add(3).add(3).delete(4).delete(3);
 console.log(group3);
-
 ```
