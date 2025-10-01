@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+  <h1>A Quiz</h1>
+  <div id="question"></div>
+  <p id="accounting"></p>
+  <button id="go-again" type="button">Give me another!</button>
+  <button id="start-over" type="button">Start Over</button>
+</body>
+<script>
+  /***********************************************************
+*
+* Quiz Code
+*
+***********************************************************/
+
+  // globals
+  let attempts = 0;
+  let numberCorrect = 0;
+  const questions = [
+    {
+      "question": "What is 2 + 2?",
+      "answer": "4"
+    },
+    {
+      "question": "What is 4 + 5?",
+      "answer": "9"
+    },
+    {
+      "question": "What is 3+ 4?",
+      "answer": "7"
+    },
+    {
+      "question": "What is 7 + 8?",
+      "answer": "15"
+    },
+    {
+      "question": "What is 9 + 9?",
+      "answer": "18"
+    },
+    {
+      "question": "What is 3 + 7?",
+      "answer": "10"
+    },
+    {
+      "question": "What is 0 + 0?",
+      "answer": "0"
+    },
+    {
+      "question": "What is 1 + 1?",
+      "answer": "2"
+    }
+  ];
+
+  // here is the actual work of the script:
+  addListeners();
+
+  // declare addListeners:
+  function addListeners() {
+    window.addEventListener('load', function () {
+      questionSetup(true);
+    });
+    const goAgain = document.getElementById(`go-again`);
+    goAgain.addEventListener("click", function () {
+      questionSetup(false);
+    });
+    const startOver = document.getElementById(`start-over`);
+    startOver.addEventListener("click", function () {
+      questionSetup(true);
+    });
+  }
+
+  // below are utility functions called by addListeners:
+
+  function questionSetup(starting) {
+    // parameters
+    numberOfChoices = 4;
+    // handle counts
+    if (starting) {
+      attempts = 0;
+      numberCorrect = 0;
+      document.getElementById(`start-over`).style.visibility = "hidden";
+    }
+    const accounting = document.getElementById(`accounting`);
+    accounting.innerHTML = `${numberCorrect} out of ${attempts} correct so far. `;
+    let randomIndices = generateDistinctIntegers(numberOfChoices, 0, questions.length - 1);
+    let questionsInvolved = elementsAtIndices(questions, randomIndices);
+    let scrambledIndices = generateDistinctIntegers(numberOfChoices, 0, numberOfChoices - 1);
+    let answer = questionsInvolved[0].answer;
+    const question = document.getElementById(`question`);
+    // remove any previous material:
+    while (question.firstChild) {
+      question.removeChild(question.firstChild);
+    }
+    const answerDiv = document.createElement("div");
+    console.log(answer);
+    answerDiv.innerHTML = `<p>${answer}</p>`;
+    question.appendChild(answerDiv);
+    question.appendChild(document.createElement('br'));
+    const options = [];
+    for (let i of scrambledIndices) {
+      let obj = {
+        value: i,
+        label: questionsInvolved[i].question,
+        all: questionsInvolved[i]
+      }
+      options.push(obj);
+    }
+    insertRadioButtons("choices", options);
+
+    // thus ends the work of questionSetup.
+    // Below we declare some utility functions used in the above work:
+    
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+    function generateDistinctIntegers(n, min, max) {
+      if (max - min + 1 < n) {
+        throw new Error("Range is too small to generate the required number of distinct integers.");
+      }
+      const result = new Set();
+      while (result.size < n) {
+        const randomInt = Math.floor(Math.random() * (max - min + 1)) + min;
+        result.add(randomInt);
+      }
+      return Array.from(result);
+    }
+    function elementsAtIndices(arr, ind) {
+      return ind.map(index => arr[index]);
+    }
+    function insertRadioButtons(name, options) {
+      const container = document.getElementById(`question`);
+      options.forEach((option, index) => {
+        // Create radio input element
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.id = `${name}-${index}`;
+        radio.name = `${name}`;
+        radio.value = option.value;
+        const label = document.createElement('label');
+        label.htmlFor = radio.id;
+        label.innerHTML = `<em>${option.label}</em>`;
+        radio.addEventListener("change", function (e) {
+          if (e.target === radio) {
+            attempts += 1;
+            document.getElementById(`go-again`).style.visibility = "visible";
+            document.getElementById(`start-over`).style.visibility = "visible";
+            let choice = e.target.value;
+            if (choice == "0") {
+              numberCorrect += 1;
+              accounting.innerHTML = `Right! ${numberCorrect} / ${attempts} so far. `;
+            } else {
+              const labelThis = document.querySelector(`label[for="${radio.id}"]`);
+              const xmark = document.createElement("span");
+              xmark.innerHTML = "&#10060; ";
+              labelThis.prepend(xmark);
+              accounting.innerHTML = `Sorry, incorrect choice. ${numberCorrect} / ${attempts} so far. `;
+            }
+            const radioCorrect = document.querySelector(`input[value="0"]`);
+            const labelCorrect = document.querySelector(`label[for="${radioCorrect.id}"]`);
+            const checkmark = document.createElement("span");
+            checkmark.innerHTML = "&#10004; ";
+            labelCorrect.prepend(checkmark);
+            const allButtons = document.querySelectorAll(`input[type= "radio"]`);
+            allButtons.forEach(radio => {
+              radio.disabled = true;
+            });
+          }
+        });  //end radio add event listener
+        // Append radio button and label to the container
+        container.appendChild(radio);
+        container.appendChild(label);
+        container.appendChild(document.createElement('br'));
+      });  // end options forEach
+    } // end insertRadioButtons
+    // that's all the utility functions defined in questionSetup
+  }  // end questionSetup
+
+</script>
+</html>
